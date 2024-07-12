@@ -1,0 +1,38 @@
+@startuml
+skinparam defaultTextAlignment center
+|u| User
+|#AntiqueWhite|s| System
+start
+:Memilih file;
+|s|
+:Memeriksa\njenis file;
+if (Kotlin file) then (Ya)
+  :Membuka\nantarmuka pengguna;
+else (Tidak)
+  |s|
+  :Memunculkan\npesan error;
+  stop
+endif
+|u|
+if (Memilih\npreferensi numerik) then (Ya)
+else (Tidak)
+  |s|
+  :Menggunakaan preferensi\nnumerik default (int);
+endif
+|u|
+:Memberi nama\nuntuk file proto;
+:Menekan tombol\n"Convert";
+|s|
+if (Format nama file\nsudah benar\n(lower_snake_case)) then (Ya)
+  :Melakukan konversi\nKotlin Data Class ke\nProtocol Buffers;
+  :Membuat file;
+  if (File berhasil dibuat) then (Ya)
+  else (Tidak)
+  :Memunculkan\npesan error;
+  endif
+else (Tidak)
+  :Memunculkan\npesan error;
+  stop
+endif
+stop
+@enduml
