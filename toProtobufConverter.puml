@@ -24,11 +24,17 @@ endif
 :Menekan tombol\n"Convert";
 |s|
 if (Format nama file\nsudah benar\n(lower_snake_case)) then (Ya)
-  :Melakukan konversi\nKotlin Data Class ke\nProtocol Buffers;
-  :Membuat file;
-  if (File berhasil dibuat) then (Ya)
-  else (Tidak)
-  :Memunculkan\npesan error;
+  if(Terdapat Kotlin Data Class) then (Ya)
+    :Melakukan konversi\nKotlin Data Class ke\nProtocol Buffers;
+    :Membuat file;
+    if (File berhasil dibuat) then (Ya)
+    else (Tidak)
+      :Memunculkan\npesan error;
+      stop
+    endif
+  else(Tidak)
+    :Memunculkan\npesan error;
+    stop
   endif
 else (Tidak)
   :Memunculkan\npesan error;
