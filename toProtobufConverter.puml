@@ -2,6 +2,7 @@
 skinparam defaultTextAlignment center
 |u| User
 |#AntiqueWhite|s| System
+|u|
 start
 :Memilih file;
 |s|
@@ -14,18 +15,18 @@ else (Tidak)
   stop
 endif
 |u|
-if (Memilih\npreferensi numerik) then (Ya)
+if (Memilih\nkonfigurasi) then (Ya)
 else (Tidak)
   |s|
-  :Menggunakaan preferensi\nnumerik default (int);
+  :Menggunakaan\nkonfigurasi default;
 endif
 |u|
 :Memberi nama\nuntuk file proto;
 :Menekan tombol\n"Convert";
 |s|
-if (Format nama file\nsudah benar\n(lower_snake_case)) then (Ya)
+if (Format nama file\nsudah benar) then (Ya)
   if(Terdapat Kotlin Data Class) then (Ya)
-    :Melakukan konversi\nKotlin Data Class ke\nProtocol Buffers;
+    :Melakukan konversi\nKotlin Data Class ke\nProtocol Buffers Message;
     :Membuat file;
     if (File berhasil dibuat) then (Ya)
     else (Tidak)
@@ -40,5 +41,5 @@ else (Tidak)
   :Memunculkan\npesan error;
   stop
 endif
-stop
+end
 @enduml
