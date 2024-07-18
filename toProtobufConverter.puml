@@ -29,6 +29,8 @@ if (Format nama file\nsudah benar) then (Ya)
     :Melakukan konversi\nKotlin Data Class ke\nProtocol Buffers Message;
     :Membuat file;
     if (File berhasil dibuat) then (Ya)
+      :Memunculkan\nnotifikasi sukses;
+      end
     else (Tidak)
       :Memunculkan\npesan error;
       stop
@@ -41,5 +43,4 @@ else (Tidak)
   :Memunculkan\npesan error;
   stop
 endif
-end
 @enduml
